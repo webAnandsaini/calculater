@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+
+    <style>
+        .calculate {
+            width: 400px;
+            height: 400px;
+            border: 3px solid lightsalmon;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .calculate h1 {
+            margin-top: 8vh;
+            font-size: 40px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: yellowgreen;
+            text-transform: uppercase;
+        }
+
+        .calculate input {
+            width: 32%;
+            height: 20px;
+            margin: 20px 0px;
+            border: 3px double rgb(27, 43, 220);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        #button {
+            width: 39%;
+            height: 30px;
+            color: aqua;
+            background-color: chocolate;
+            border: none;
+            font-size: 22px;
+        }
+
+        #total {
+            width: 77.2%;
+            height: 25px;
+            border: 3px solid lawngreen;
+        }
+
+        #button:hover {
+            background-color: blue;
+            color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculate">
+        <h1>My calculater</h1>
+        <form action="#">
+            <input type="number" id="first">
+            <select name="oprate" id="select">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">x</option>
+                <option value="/">/</option>
+            </select>
+            <input type="number" id="last">
+            <br>
+            <input type="button" onclick="anand()" value="Calculate" id="button">
+            <input type="reset" value="clear" id="button">
+            <br>
+            <input type="text" readonly="" id="total">
+            <br>
+
+        </form>
+    </div>
+
+  
+
+    <script>
+        function anand(){
+            var x = document.getElementById("first").value;
+            var z = document.getElementById("select").value;
+            var y = document.getElementById("last").value;
+
+
+            if (z == "+") {
+                var answer = parseInt(x) + parseInt(y);
+            }
+
+            else if (z == "-") {
+                var answer = parseInt(x) - parseInt(y);
+            }
+
+            else if (z == "*") {
+                var answer = parseInt(x) * parseInt(y);
+            }
+
+            else if (z == "/") {
+                var answer = parseInt(x) / parseInt(y);
+            }
+
+            else{
+                var anand = "sorry you have not select opretor";
+            }
+
+            document.getElementById("total").value = answer;
+        };
+
+
+
+    
+
+    </script>
+
+</body>
+
+</html>
